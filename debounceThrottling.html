@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DebounceThrottling</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="Enter Your Name">
+    </div>
+
+    <script>
+        const input = document.querySelector("input")
+        input.addEventListener("keyup", debounce(hello, 1000));
+
+        function debounce(func, delay) {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    func(...args)
+                }, delay)
+            }
+        };
+
+        // FYI: Before spread & rest operators, paasing arguments to the clouser was done using blind & apply
+
+        function hello(e) {
+            console.log("Hello " + e.target.value)
+        }
+    </script>
+
+</body>
+
+</html>

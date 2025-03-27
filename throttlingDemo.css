@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#loader {
+    border: 8px solid gray;
+    border-right-color: rgb(40, 40, 151);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
